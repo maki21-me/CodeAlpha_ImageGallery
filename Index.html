@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+  <header class="header">
+ <h1><span class="fixed-header-text">Image Gallery</span></h1>
+
+<div class="filters">
+  <div class="filters-inner">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="nature">Nature</button>
+    <button data-filter="city">City</button>
+    <button data-filter="people">People</button>
+  </div>
+</div>
+</header>
+  <div class="gallery" id="gallery"></div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+  <footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Image Gallery. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="src/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+body {
+  font-family: sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  pointer-events: none; /* so it doesn't block text selection */
+  background-color: hwb(0 100% 0%);
+}
+
+ h1 {
+  margin: 20px 0;
+  text-align: center;
+  color:black;
+  font-size: 28px;
+ }
+
+.fixed-header-text {
+  color:black;
+  padding: 0px 0px;
+  pointer-events: auto;
+  display: inline-block;
+
+}
+
+.filters {
+  background: transparent;
+  pointer-events: none; /* so it doesn't block text selection */
+  margin-top: 0px;
+}
+
+.filters-inner {
+  pointer-events: auto;
+  text-align: center;
+  padding: 8px 0;
+  background: none;
+  box-shadow: none;
+  top: 0;
+}
+
+.filters-inner button {
+  padding: 10px 16px;
+margin: 0 5px;
+  background: rgba(255, 255, 255, 0.85); /* light background for visibility */
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+  cursor: pointer;
+  color: #333;
+}
+
+.filters-inner button:hover {
+  background: #333;
+  color: #fff;
+}
+
+.filters-inner button.active {
+  background: #000;
+  color: #fff;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 90px; /* just enough to make space for floating buttons */
+  margin-bottom: 40px;
+  padding:44px 10px;
+}
+
+
+.image {
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.image:hover img {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  transition: opacity 0.3s;
+}
+
+.close, .prev, .next {
+  position: absolute;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.close {
+  top: 20px;
+  right: 30px;
+}
+
+.prev {
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.next {
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+  .filters button {
+    font-size: 14px;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: hwb(0 100% 0%);
+  color:black;
+  text-align: center;
+  padding: 12px 10px;
+  font-size: 17px;
+  z-index: 99;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+  pointer-events: none; /* so it won't block copy selections */
+}
+
+.footer-content {
+  pointer-events: auto; /* allow interactions if needed */
+}
